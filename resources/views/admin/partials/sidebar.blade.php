@@ -26,11 +26,11 @@
                     </ul> -->
                 </li>
                 <li>
-                    <a href="chart.html">
+                    <a href="{{route('Category')}}">
                         <i class="fas fa-chart-bar"></i>Categorys</a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="{{route('Posts')}}">
                         <i class="fas fa-table"></i>Posts</a>
                 </li>
 

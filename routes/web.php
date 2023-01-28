@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Guest\HomeController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\CategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +27,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route ::get('/Category' , [CategoryController::class, 'Category' ])->name('Category');
+    Route ::get('/Posts' , [PostController::class, 'Posts' ])->name('Posts');
+    Route ::post('/add_category', [CategoryController::class, 'add_category'])->name('add_category');
+    Route ::get('/add_post', [PostController::class, 'add_post'])->name('addpost');
+    Route ::post('/create_Post', [PostController::class, 'createPost'])->name('createPost');
 });
 
 require __DIR__.'/auth.php';
