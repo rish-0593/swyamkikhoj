@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Guest\HomeController;
+use App\Http\Controllers\Guest\PostController;
 use App\Http\Controllers\Admin\DashboardController;
 
 /*
@@ -19,6 +20,8 @@ use App\Http\Controllers\Admin\DashboardController;
 Route::get('/', [HomeController::class, 'home'])->name('guest.home');
 Route::get('about-us', [HomeController::class, 'about'])->name('guest.about');
 Route::get('contact-us', [HomeController::class, 'contact'])->name('guest.contact');
+
+Route::get('/post/{slug}', [PostController::class, 'post'])->name('guest.post');
 
 Route::get('dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
