@@ -14,6 +14,21 @@
         <link rel="stylesheet" href="{{asset('assets/frontend/assets/css/fontawesome.css')}}">
         <link rel="stylesheet" href="{{asset('assets/frontend/assets/css/templatemo-stand-blog.css')}}">
         <link rel="stylesheet" href="{{asset('assets/frontend/assets/css/owl.css')}}">
+        <style>
+            .blog-posts .down-content p {
+                padding: unset !important;
+                margin: 25px 0px !important;
+                border-top: unset !important;
+                border-bottom: unset !important;
+            }
+
+            .post-content {
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        </style>
 
         {{ $styles ?? '' }}
     </head>
