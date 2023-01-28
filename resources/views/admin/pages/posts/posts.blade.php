@@ -9,10 +9,7 @@
                                 <!-- DATA TABLE -->
                                 <h3 class="title-5 m-b-35">All Post </h3>
                                 <div class="table-data__tool">
-                                    <div class="table-data__tool-left">
-                                     
-                                      
-                                       
+                                    <div class="table-data__tool-left">  
                                     </div>
                                     <div class="table-data__tool-right">
                                         <button class="au-btn au-btn-icon au-btn--green au-btn--small">
@@ -57,9 +54,11 @@
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
+                                                        <a href="{{route('delete_post', ['id' => $post->id])}}"
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
+</a>
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="More">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </button>
@@ -79,7 +78,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p>Copyright © 2023 Swayam ki khoj . All rights reserved . </p>
                                 </div>
                             </div>
                         </div>

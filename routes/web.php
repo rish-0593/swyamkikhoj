@@ -5,8 +5,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Guest\HomeController;
 use App\Http\Controllers\Guest\PostController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\PostController as PostadminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 
 /*
@@ -33,10 +34,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route ::get('/Category' , [CategoryController::class, 'Category' ])->name('Category');
-    Route ::get('/Posts' , [PostController::class, 'Posts' ])->name('Posts');
+    Route ::get('/Posts' , [PostadminController::class, 'Posts' ])->name('Posts');
     Route ::post('/add_category', [CategoryController::class, 'add_category'])->name('add_category');
-    Route ::get('/add_post', [PostController::class, 'add_post'])->name('addpost');
-    Route ::post('/create_Post', [PostController::class, 'createPost'])->name('createPost');
+    Route ::get('/add_post', [PostadminController::class, 'add_post'])->name('addpost');
+    Route ::post('/create_Post', [PostadminController::class, 'createPost'])->name('createPost');
+    Route ::get('/delete_post/id', [PostadminController::class, 'delete_post'])->name('delete_post');
+    Route ::get('/delete_category/id', [CategoryController::class, 'delete_category'])->name('delete_category');
+     Route ::get('logout',[AuthenticatedSessionController::class, 'destroy'])->name('logout'); 
 });
 
 require __DIR__.'/auth.php';

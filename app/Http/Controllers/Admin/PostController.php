@@ -37,4 +37,9 @@ class PostController extends Controller
         $posts = Post::all();
         return view('admin.pages.posts.posts' , compact('posts'));
     }
+    public function delete_post(Request $request){
+       $post = Post::find($request->id)->delete();
+        $posts = Post::all();
+        return view('admin.pages.posts.posts' , compact('posts'));
+    }
 }

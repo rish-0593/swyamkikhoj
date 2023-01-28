@@ -7,8 +7,6 @@ use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-
 class CategoryController extends Controller
 {
     public function Category(){
@@ -24,4 +22,10 @@ class CategoryController extends Controller
         $categorey = Category::all();
         return view('admin.pages.categores.category' , compact('categorey'));
     }
+
+    public function delete_category(Request $request){
+        $post = Category::find($request->id)->delete();
+        $categorey = Category::all();
+        return view('admin.pages.categores.category' , compact('categorey'));
+     }
 }
