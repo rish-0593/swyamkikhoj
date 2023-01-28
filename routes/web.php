@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\DashboardController;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('guest.home');
+Route::get('about-us', [HomeController::class, 'about'])->name('guest.about');
+Route::get('contact-us', [HomeController::class, 'contact'])->name('guest.contact');
 
 Route::get('dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
