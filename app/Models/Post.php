@@ -13,4 +13,10 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+
+    public function banner()
+    {
+        return $this->belongsTo(banner::class, 'id', 'post_id');
+    }
 }

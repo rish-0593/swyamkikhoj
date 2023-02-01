@@ -21,7 +21,7 @@
                                         </ul>
                                     </div>
                                    @endif
-                                        <form action="{{route('createPost')}}" method="post" novalidate="novalidate">
+                                        <form action="{{route('createPost')}}" method="post" novalidate="novalidate" enctype="multipart/form-data">
                                             @csrf
                                         <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Select Category </label>
@@ -42,7 +42,10 @@
                                                 <textarea class="ckeditor form-control" name="Content" required></textarea>
                                                 <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                             </div>
-
+                                            <div class="form-group">
+                                                <label for="Content" class="control-label mb-1">Banner</label>
+                                                <input type="file" name="banner" id="banner" class="form-control">
+                                            </div>
                                             <button type="submit"  class="btn btn-primary " name="submit">Create</button>
                                         </form>
                                     </div>

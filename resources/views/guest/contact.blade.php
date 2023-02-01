@@ -70,16 +70,16 @@
                       <div class="content">
                         <ul>
                           <li>
-                            <h5>090-484-8080</h5>
+                            <h5>8130941574</h5>
                             <span>PHONE NUMBER</span>
                           </li>
                           <li>
-                            <h5>info@company.com</h5>
+                            <h5>jhagautam009@gmail.com</h5>
                             <span>EMAIL ADDRESS</span>
                           </li>
                           <li>
-                            <h5>123 Aenean id posuere dui,
-                                <br>Praesent laoreet 10660</h5>
+                            <h5>F 87 Bank Street Lado Sarai Mehrouli,
+                                <br>South Delhi 110030</h5>
                             <span>STREET ADDRESS</span>
                           </li>
                         </ul>
