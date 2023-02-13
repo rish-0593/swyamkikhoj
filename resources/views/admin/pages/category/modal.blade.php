@@ -1,7 +1,9 @@
 <div class="modal fade" id="addUpdateCategoryModal" tabindex="-1" role="dialog" aria-labelledby="addUpdateCategoryModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
-        <form action="{{route('category.add')}}" method="post">
+        <form action="{{route('category.updateOrCreate')}}" method="post">
             @csrf
+            <input type="hidden" name="id" id="category_id">
+
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modal-title">Add Category</h5>
