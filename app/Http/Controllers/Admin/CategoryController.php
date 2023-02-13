@@ -9,23 +9,18 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 class CategoryController extends Controller
 {
-    public function Category(){
-     $categorey = Category::all();
-        return view('admin.pages.categores.category' , compact('categorey'));
-    }
-    public function add_category(Request $request){
-        $category = new  Category;
-        $category->name = $request->name;
-        $category->slug  = Str::lower(Str::replace(' ', '-', $request->name));
-        $category->save();
-
-        $categorey = Category::all();
-        return view('admin.pages.categores.category' , compact('categorey'));
+    public function list(){
+        $category = Category::get();
+        return view('admin.pages.category.index', compact('category'));
     }
 
-    public function delete_category(Request $request){
-        $post = Category::find($request->id)->delete();
-        $categorey = Category::all();
-        return view('admin.pages.categores.category' , compact('categorey'));
+    public function add(Request $request){
+        Category::create($request->all());
+        return redirect()->back();
+    }
+
+    public function delete($id){
+        Category::find($id)->delete();
+        return redirect()->back();
      }
 }

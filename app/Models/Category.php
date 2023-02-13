@@ -2,10 +2,27 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name', 'slug'
+    ];
+
+    public static function boot()
+    {
+        parent::boot();
+        self::creating(function($model){
+            $model['slug'] = Str::lower(Str::replace(' ', '-', request()->name));
+        });
+
+        self::updating(function($model){
+            $model['slug'] = Str::lower(Str::replace(' ', '-', request()->name));
+        });
+    }
 }

@@ -33,14 +33,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route ::get('/Category' , [CategoryController::class, 'Category' ])->name('Category');
-    Route ::get('/Posts' , [PostadminController::class, 'Posts' ])->name('Posts');
-    Route ::post('/add_category', [CategoryController::class, 'add_category'])->name('add_category');
-    Route ::get('/add_post', [PostadminController::class, 'add_post'])->name('addpost');
-    Route ::post('/create_Post', [PostadminController::class, 'createPost'])->name('createPost');
-    Route ::get('/delete_post/id', [PostadminController::class, 'delete_post'])->name('delete_post');
-    Route ::get('/delete_category/id', [CategoryController::class, 'delete_category'])->name('delete_category');
-     Route ::get('logout',[AuthenticatedSessionController::class, 'destroy'])->name('logout'); 
+
+    Route ::get('category' , [CategoryController::class, 'list' ])->name('category');
+    Route ::post('add-category', [CategoryController::class, 'add'])->name('category.add');
+    Route ::get('delete-category/{id}', [CategoryController::class, 'delete'])->name('category.delete');
+
+    Route ::get('posts' , [PostadminController::class, 'Posts' ])->name('post');
+    Route ::get('add-post', [PostadminController::class, 'add_post'])->name('post.add');
+    Route ::post('create-post', [PostadminController::class, 'createPost'])->name('post.create');
+    Route ::get('delete-post/{id}', [PostadminController::class, 'delete_post'])->name('post.delete');
+
+    Route ::get('logout',[AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
 
 require __DIR__.'/auth.php';

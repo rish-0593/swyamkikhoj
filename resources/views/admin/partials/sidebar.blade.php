@@ -8,7 +8,7 @@
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
                 <li class="has-sub">
-                    <a class="js-arrow" href="#">
+                    <a class="js-arrow" href="{{ route('dashboard') }}">
                         <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     <!-- <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
@@ -25,17 +25,16 @@
                         </li>
                     </ul> -->
                 </li>
+
                 <li>
-                    <a href="{{route('Category')}}">
-                        <i class="fas fa-chart-bar"></i>Categorys</a>
-                </li>
-                <li>
-                    <a href="{{route('Posts')}}">
-                        <i class="fas fa-table"></i>Posts</a>
+                    <a href="{{route('category')}}">
+                        <i class="fas fa-chart-bar"></i>Categories</a>
                 </li>
 
-
-
+                <li>
+                    <a href="{{route('post')}}">
+                    <i class="fas fa-table"></i>Posts</a>
+                </li>
             </ul>
         </nav>
     </div>
