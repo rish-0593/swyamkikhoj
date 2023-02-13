@@ -33,7 +33,7 @@
 
             <div class="page-container">
                 @include('admin.partials.desktop-header')
-                {{ $slot }}>
+                {{ $slot }}
             </div>
         </div>
 
