@@ -14,8 +14,16 @@ class CategoryController extends Controller
         return view('admin.pages.category.index', compact('category'));
     }
 
-    public function add(Request $request){
-        Category::create($request->all());
+    public function updateOrCreate(Request $request){
+        Category::updateOrCreate(
+            [
+                'id' => $request->id ?? null,
+            ],
+            [
+                'name' => $request->name,
+            ]
+        );
+
         return redirect()->back();
     }
 

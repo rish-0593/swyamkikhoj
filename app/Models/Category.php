@@ -18,11 +18,11 @@ class Category extends Model
     {
         parent::boot();
         self::creating(function($model){
-            $model['slug'] = Str::lower(Str::replace(' ', '-', request()->name));
+            $model['slug'] = Str::slug(request()->name, '-');
         });
 
         self::updating(function($model){
-            $model['slug'] = Str::lower(Str::replace(' ', '-', request()->name));
+            $model['slug'] = Str::slug(request()->name, '-');
         });
     }
 }

@@ -8,7 +8,7 @@
                         <h3 class="title-5 m-b-35">Category List </h3>
                         <div class="table-data__tool">
                             <div class="table-data__tool-right">
-                                <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#addUpdateCategoryModal">
+                                <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle-add="modal">
                                     <i class="zmdi zmdi-plus"></i>Add Category
                                 </button>
                             </div>
@@ -36,7 +36,7 @@
                                             </td>
                                             <td>
                                                 <div class="table-data-feature" style="justify-content: flex-start;">
-                                                    <button class="item" data-placement="top" title="Edit" data-toggle="modal" data-target="#addUpdateCategoryModal">
+                                                    <button class="item" data-placement="top" title="Edit" data-toggle-edit="modal" data-category-id="{{ $value->id }}">
                                                         <i class="zmdi zmdi-edit"></i>
                                                     </button>
 
@@ -64,4 +64,8 @@
     </div>
 
     @include('admin.pages.category.modal')
+
+    <x-slot name="scripts">
+        @include('admin.pages.category.script')
+    </x-slot>
 </x-admin-layout>

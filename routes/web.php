@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route ::get('category' , [CategoryController::class, 'list' ])->name('category');
-    Route ::post('add-category', [CategoryController::class, 'add'])->name('category.add');
+    Route ::post('update-or-create-category', [CategoryController::class, 'updateOrCreate'])->name('category.updateOrCreate');
     Route ::get('delete-category/{id}', [CategoryController::class, 'delete'])->name('category.delete');
 
     Route ::get('posts' , [PostadminController::class, 'Posts' ])->name('post');
