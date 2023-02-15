@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Post;
-use App\Models\banner;
+use App\Models\Banner;
 use App\Models\Category;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -40,7 +39,7 @@ class PostController extends Controller
 
         $request->banner->move(public_path('postBanner'), $image_name);
 
-        $banner = new banner();
+        $banner = new Banner();
         $banner->banner_image = $image_name;
         $banner->post_id  = $post->id;
         $banner->save();
