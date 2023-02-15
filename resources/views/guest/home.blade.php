@@ -4,7 +4,7 @@
             <div class="owl-banner owl-carousel">
                 @forelse ($bannerPosts as $bannerPost)
                     <div class="item">
-                        <img src="{{asset('/postBanner/'.$bannerPost->banner->banner_image)}}" alt="">
+                        <img src="{{asset('/postBanner/'.$bannerPost->banner?->banner_image)}}" alt="">
                         <div class="item-content">
                             <div class="main-content">
                                 <div class="meta-category">
@@ -35,8 +35,7 @@
                                 <div class="col-lg-12">
                                     <div class="blog-post">
                                         <div class="blog-thumb">
-                                         
-                                            <img src="{{asset('/postBanner/'.$post->banner->banner_image)}}" alt="{{asset('/postBanner/'.$post->banner->banner_image)}}">
+                                            <img src="{{asset('/postBanner/'.$post->banner?->banner_image)}}" alt="{{asset('/postBanner/'.$post->banner?->banner_image)}}">
                                         </div>
 
                                         <div class="down-content">
