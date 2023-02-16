@@ -24,6 +24,15 @@
         <link href="{{asset('assets/backend/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
         <link href="{{asset('assets/backend/css/theme.css')}}" rel="stylesheet" media="all">
 
+        <style>
+            .post-content {
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        </style>
+
         {{ $styles ?? '' }}
     </head>
     <body class="animsition">
@@ -33,7 +42,7 @@
 
             <div class="page-container">
                 @include('admin.partials.desktop-header')
-                {{ $slot }}>
+                {{ $slot }}
             </div>
         </div>
 

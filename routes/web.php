@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Guest\HomeController;
 use App\Http\Controllers\Guest\PostController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\PostController as PostadminController;
+use App\Http\Controllers\Admin\PostController as PostAdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
@@ -34,14 +34,18 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route ::get('category' , [CategoryController::class, 'list' ])->name('category');
-    Route ::post('add-category', [CategoryController::class, 'add'])->name('category.add');
-    Route ::get('delete-category/{id}', [CategoryController::class, 'delete'])->name('category.delete');
+    Route::prefix('admin')->group(function () {
+        Route ::get('category' , [CategoryController::class, 'list' ])->name('category');
+        Route ::post('update-or-create-category', [CategoryController::class, 'updateOrCreate'])->name('category.updateOrCreate');
+        Route ::get('delete-category/{id}', [CategoryController::class, 'delete'])->name('category.delete');
 
-    Route ::get('posts' , [PostadminController::class, 'Posts' ])->name('post');
-    Route ::get('add-post', [PostadminController::class, 'add_post'])->name('post.add');
-    Route ::post('create-post', [PostadminController::class, 'createPost'])->name('post.create');
-    Route ::get('delete-post/{id}', [PostadminController::class, 'delete_post'])->name('post.delete');
+        Route ::get('post' , [PostAdminController::class, 'list'])->name('post');
+        Route ::get('post/add', [PostAdminController::class, 'add'])->name('post.add');
+        Route ::post('post/add', [PostAdminController::class, 'create'])->name('post.create');
+        Route ::get('post/{id}/edit', [PostAdminController::class, 'edit'])->name('post.edit');
+        Route ::post('post/{id}/update', [PostAdminController::class, 'update'])->name('post.update');
+        Route ::get('post/{id}/delete', [PostAdminController::class, 'delete'])->name('post.delete');
+    });
 
     Route ::get('logout',[AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
