@@ -59,11 +59,12 @@
                                 </div>
                             @empty
                             @endforelse
+                           
 
                             @if (count($posts) > 0)
                                 <div class="col-lg-12">
-                                    <div class="main-button">
-                                        <a href="blog.html">View All Posts</a>
+                                    <div class="test">
+                                  {!! $posts->links() !!}
                                     </div>
                                 </div>
                             @endif

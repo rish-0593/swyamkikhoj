@@ -13,7 +13,7 @@ class HomeController extends Controller
         $categories = Category::get();
 
         $bannerPosts = Post::query()->inRandomOrder()->take(10)->get();
-        $posts = Post::get();
+        $posts = Post::latest()->paginate(5);
         $recentPosts = Post::query()->latest()->take(5)->get();
 
         return view('guest.home', compact('categories', 'bannerPosts', 'posts', 'recentPosts'));

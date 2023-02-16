@@ -23,7 +23,7 @@
                             <div class="col-lg-12">
                                 <div class="blog-post">
                                     <div class="blog-thumb">
-                                        <img src="{{asset('assets/frontend/assets/images/blog-post-02.jpg')}}" alt="">
+                                        <img src="{{asset('/postBanner/'.$post->banner?->banner_image)}}" alt="">
                                     </div>
                                     <div class="down-content">
                                         <span>{{ $post->category->name }}</span>
