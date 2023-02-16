@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-12">
                 <div class="copyright-text">
-                    <p>Copyright 2023</p>
+                    <p>Copyright {{ date("Y")}}</p>
                 </div>
             </div>
         </div>

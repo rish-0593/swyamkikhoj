@@ -63,7 +63,7 @@
 
                             @if (count($posts) > 0)
                                 <div class="col-lg-12">
-                                    <div class="test">
+                                    <div class="">
                                   {!! $posts->links() !!}
                                     </div>
                                 </div>

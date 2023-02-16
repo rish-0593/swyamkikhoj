@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
         Route ::get('post/{id}/delete', [PostAdminController::class, 'delete'])->name('post.delete');
     });
 
-    Route ::get('logout',[AuthenticatedSessionController::class, 'destroy'])->name('logout');
+     Route ::get('logout',[AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
 
 require __DIR__.'/auth.php';
