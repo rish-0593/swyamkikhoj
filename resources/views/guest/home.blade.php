@@ -59,15 +59,13 @@
                                 </div>
                             @empty
                             @endforelse
-                           
 
-                            @if (count($posts) > 0)
                                 <div class="col-lg-12">
                                     <div class="">
-                                  {!! $posts->links() !!}
+                                    {{ $posts->links()  }}
                                     </div>
                                 </div>
-                            @endif
+                        
                         </div>
                     </div>
                 </div>
