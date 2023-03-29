@@ -74,7 +74,7 @@
                             <span>PHONE NUMBER</span>
                           </li>
                           <li>
-                            <h5>jhagautam009@gmail.com</h5>
+                            <h5>Gautam@swayamkikhoj.com</h5>
                             <span>EMAIL ADDRESS</span>
                           </li>
                           <li>

@@ -35,7 +35,7 @@
      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6935747493789766"
      crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body onmousedown="return false" onselectstart="return false" >
         @include('guest.partials.preloader')
         @include('guest.partials.header')
 
