@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Swayam Ki Khoj') }}</title>
+        <title>{{ config('app.name', 'BlogBloom') }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -31,7 +31,7 @@
         </style>
 
         {{ $styles ?? '' }}
-        
+
      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6935747493789766"
      crossorigin="anonymous"></script>
     </head>

@@ -2,7 +2,7 @@
     <div class="header-mobile__bar">
         <div class="container-fluid">
             <div class="header-mobile-inner">
-                <h3>Swayam Ki Khoj</h3>
+                <h3>BlogBloom</h3>
                 <button class="hamburger hamburger--slider" type="button">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>

@@ -70,16 +70,17 @@
                       <div class="content">
                         <ul>
                           <li>
-                            <h5>8130941574</h5>
+                            <h5>0123456789</h5>
                             <span>PHONE NUMBER</span>
                           </li>
                           <li>
-                            <h5>Gautam@swayamkikhoj.com</h5>
+                            <h5>contact.us@example.com</h5>
                             <span>EMAIL ADDRESS</span>
                           </li>
                           <li>
-                            <h5>F 87 Bank Street Lado Sarai Mehrouli,
-                                <br>South Delhi 110030</h5>
+                            <h5>Address
+                                <br>Delhi, 110030
+                            </h5>
                             <span>STREET ADDRESS</span>
                           </li>
                         </ul>
@@ -90,7 +91,7 @@
               </div>
             </div>
 
-     
+
 
           </div>
         </div>
