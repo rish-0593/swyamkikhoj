@@ -13,13 +13,13 @@
 
                 <li>
                     <a href="{{route('category')}}">
-                        <i class="fas fa-chart-bar"></i>Categories
+                        <i class="fas fa-list"></i>Categories
                     </a>
                 </li>
 
                 <li>
                     <a href="{{route('post')}}">
-                        <i class="fas fa-table"></i>Posts
+                        <i class="fas fa-file"></i>Posts
                     </a>
                 </li>
             </ul>
