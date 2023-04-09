@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Guest\HomeController;
 use App\Http\Controllers\Guest\PostController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\PostController as PostAdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Vendor\FilepondController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\PostController as PostAdminController;
 
 
 /*
@@ -49,5 +50,9 @@ Route::middleware('auth')->group(function () {
 
      Route ::get('logout',[AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
+
+Route::post('filepond/upload', [FilepondController::class, 'upload'])->name('filepond.upload');
+Route::delete('filepond/revert', [FilepondController::class, 'revert'])->name('filepond.revert');
+Route::get('filepond/restore', [FilepondController::class, 'restore'])->name('filepond.restore');
 
 require __DIR__.'/auth.php';

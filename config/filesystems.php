@@ -44,6 +44,13 @@ return [
             'throw' => false,
         ],
 
+        'banner' => [
+            'driver' => 'local',
+            'root' => public_path('postBanner'),
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Crypt;
 
 class PostController extends Controller
 {
@@ -35,15 +36,6 @@ class PostController extends Controller
 
         $post = $this->createOrUpdatePost($request);
 
-        $image_name = time().'.'.$request->banner->extension();
-
-        $request->banner->move(public_path('postBanner'), $image_name);
-
-        $banner = new Banner();
-        $banner->banner_image = $image_name;
-        $banner->post_id  = $post->id;
-        $banner->save();
-
         return redirect()->back();
     }
 
@@ -62,13 +54,18 @@ class PostController extends Controller
             $post_data
         );
 
+        if(!blank($request->banner)){
+            $id = Crypt::decrypt($request->banner);
+            Banner::find($id)->update(['post_id' => $post->id]);
+        }
+
         return $post;
     }
 
     public function edit($id)
     {
         $categories = Category::get();
-        $post = Post::find($id);
+        $post = Post::with('banner')->find($id);
 
         return view('admin.pages.posts.edit' , compact('categories', 'post'));
     }

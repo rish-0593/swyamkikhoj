@@ -47,7 +47,7 @@
 
                                     <div class="form-group">
                                         <label for="banner" class="control-label mb-1">Banner</label>
-                                        <input type="file" name="banner" id="banner" class="form-control">
+                                        <input type="file" name="banner" id="banner" class="form-control" required>
                                     </div>
 
                                     <button type="submit"  class="btn btn-primary " name="submit">Create</button>
@@ -61,8 +61,14 @@
     </div>
 
     <x-slot name="scripts">
+        @includeIf('vendor.filepond.script')
+
         <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
         <script type="text/javascript">
+            let file = "{{ !blank($post->banner) ? Crypt::encrypt($post->banner->id) : null }}";
+
+            _initializeFilepond(file);
+
             $(document).ready(function () {
                 $('.ckeditor').ckeditor();
             });
